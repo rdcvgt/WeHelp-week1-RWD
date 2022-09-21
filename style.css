@@ -41,9 +41,18 @@ body{
 	display: none;
 }
 
+.spacebar{
+	position: fixed;
+/*	border: 1px solid #000;*/
+	height: 100%;
+	width: 50%;
+	left: 0;
+	z-index: 1;
+/*	background-color: #fff;*/
+}
+
 
 .sidebar{
-	display: none;
 	position: fixed;
 	right: -50%;
 	height: 100%;
