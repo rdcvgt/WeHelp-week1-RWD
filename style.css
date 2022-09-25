@@ -145,7 +145,7 @@ body{
 
 /*最下方欄位置中, 1200px*/
 .row{
-	width: 100p%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	padding-top: 50px ;
@@ -153,27 +153,33 @@ body{
 
 .infoGroup{
 	width: 1200px;
+	height: 100%;
+	display: inline-grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 50px 200px 200px;
+	grid-gap: 10px;
+
+	grid-template-areas: 
+	"pr-1 pr-1 pr-2 pr-2"
+
 }
 
 /*promotion欄位*/
-.promotionGroup{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .promotion{
-	flex: none;
-	width: 576px;
-	height: 50px;
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
-	margin: 10px;
-
 	border-radius: 20px;
 	overflow: hidden;
 	filter: drop-shadow(12px 8px 8px rgba(0, 0, 0, 0.1))
+}
+
+.pr-1{
+	grid-area: pr-1;
+}
+
+.pr-2{
+	grid-area: pr-2;
 }
 
 .promoImg{
@@ -190,21 +196,9 @@ body{
 }
 
 /*article 欄位*/
-.articleGroup{
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-}
-
 .article{
 	flex: none;
-	width: 278px;
-	height: 200px;
-	margin: 10px;
 	background-color: #ffffff;
-
-
 	border-radius: 20px;
 	overflow: hidden;
 	filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.1));
@@ -222,8 +216,7 @@ body{
 }
 
 .imgBox{
-	max-width: 100%; /* 設定圖片外框架*/
-	max-height: 100%;
+	max-width: 100%; /*設定圖片外框架*/
 
 }
 
@@ -258,16 +251,12 @@ body{
 @media (max-width: 1200px){
 	.infoGroup{
 		width: 90%;
-	}
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 50px repeat(4, 200px);
 
-	.promotion{
-		width: 45%;
-	}
-
-	.article{
-		width: 45%;
-	}
-
+		grid-template-areas: 
+		"pr-1 pr-2"
+		}
 }
 
 /*手機尺寸 RWD*/
@@ -293,19 +282,13 @@ body{
 	}
 
 	.infoGroup{
-		width: 90%;
-	}
+		height: 100%;
+		grid-template-columns: 1fr;
+		grid-template-rows: 50px  50px repeat(8, 200px);
 
-	.promotionGroup{
-		flex-wrap: wrap;
-	}
-
-	.promotion{
-		width: 90%;
-	}
-
-	.article{
-		width: 90%;
+		grid-template-areas: 
+		"pr-1"
+		"pr-2" 
 	}
 }
 
